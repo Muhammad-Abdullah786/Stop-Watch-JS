@@ -6,27 +6,16 @@ let timer = document.getElementById('timer')
 
 let [milliseconds,seconds, minutes, hours] = [0, 0, 0, 0,]
 let running = false
-startNode.addEventListener('click', startTimer)
-// pauseNode.addEventListener('click', pauseTimer)
-// resetNode.addEventListener('click', resetTimer)
-function startTimer() {
-    milliseconds ++;
-    if (milliseconds >= 999){
-        milliseconds = 0;
-        seconds++;
-        if (seconds >= 60){
-            seconds = 0;
-            minutes++;
-        }
-        if (minutes >= 60){
-            minutes = 0;
-            hours++;
-        }
-        if (hours >= 24){
-            hours = 0;
-        }
-        timer.innerHTML = `${hours}:${minutes}:${seconds}.${milliseconds}`
-}
-}
+
+function start(){
+    console.log("start");
+    start()
+} 
 
 
+function pause(){
+     console.log("pause");
+}
+function reset(){
+    console.log("reset");
+}
