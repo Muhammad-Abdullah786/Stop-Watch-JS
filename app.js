@@ -9,6 +9,9 @@ let running = false
 
 function start(){
     console.log("start");
+    if (running === true) {
+        return
+    }
     start()
 } 
 
