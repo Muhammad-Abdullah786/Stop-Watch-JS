@@ -11,18 +11,31 @@ let timer = document.getElementById('timer')
 // },100)
 
 let [milliseconds,seconds, minutes, hours] = [0, 0, 0, 0,]
-let running = true
+let running = false
 function start(){
-    // running = true
-    if (running === true ) {
-        start()
-        milliseconds ++;
-        timer.innerText = milliseconds
-        setTimeout(start(), 9000)
-        // console.log("start" , timer.innerText);
+    if (!running) {
+        running = true
+        setInterval(startStopWatch,100)
     }
 } 
+function startStopWatch(){
+    if(running){
+        milliseconds++;
 
+    }
+    if (milliseconds === 10) {
+        milliseconds = 0
+        seconds++;
+        
+        if (seconds === 60) {
+            seconds =0
+            hours++
+            
+        }
+    }
+    
+    timer.innerText = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+}
 
 function pause(){
      console.log("pause");
